@@ -1,7 +1,12 @@
 // TransactionTable.js
 import React from 'react';
 
-function TransactionTable({ transactions }) {
+function TransactionTable({ transactions, searchTerm }) {
+  // Filter transactions based on search term
+  const filteredTransactions = transactions.filter(transaction =>
+    transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
       <h2>Transaction Table</h2>
@@ -14,8 +19,8 @@ function TransactionTable({ transactions }) {
           </tr>
         </thead>
         <tbody>
-          {/* Map over transactions array and render each transaction as a table row */}
-          {transactions.map((transaction, index) => (
+          {/* Map over filtered transactions array and render each transaction as a table row */}
+          {filteredTransactions.map((transaction, index) => (
             <tr key={index}>
               <td>{transaction.description}</td>
               <td>{transaction.amount}</td>

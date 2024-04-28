@@ -1,3 +1,4 @@
+// App.js
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -14,6 +15,9 @@ function App() {
     { id: 4, description: 'Books', amount: 15.75, category: 'Shopping' },
   ]);
 
+  // Define state for search term
+  const [searchTerm, setSearchTerm] = useState('');
+
   // Define function to add new transaction
   const addTransaction = (newTransaction) => {
     setTransactions([...transactions, { ...newTransaction, id: transactions.length + 1 }]);
@@ -29,9 +33,9 @@ function App() {
         {/* Render TransactionForm component */}
         <TransactionForm addTransaction={addTransaction} />
         {/* Render SearchBar component */}
-        <SearchBar />
-        {/* Render TransactionTable component and pass transactions as props */}
-        <TransactionTable transactions={transactions} />
+        <SearchBar setSearchTerm={setSearchTerm} />
+        {/* Render TransactionTable component and pass transactions and searchTerm as props */}
+        <TransactionTable transactions={transactions} searchTerm={searchTerm} />
       </header>
     </div>
   );

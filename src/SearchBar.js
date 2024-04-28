@@ -1,8 +1,10 @@
 // SearchBar.js
-import React, { useState } from 'react';
+import React from 'react';
 
-function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState('');
+function SearchBar({ setSearchTerm }) {
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
   return (
     <div>
@@ -10,8 +12,7 @@ function SearchBar() {
       <input
         type="text"
         placeholder="Search by description"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={handleChange}
       />
     </div>
   );
