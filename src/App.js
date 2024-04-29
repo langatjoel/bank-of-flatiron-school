@@ -30,7 +30,7 @@ function App() {
       <header className="App-header">
         
         <p>
-          Welcome to the Bank of Flatiron!
+         THE ROYAL BANK OF FLATIRON
         </p>
         
 
