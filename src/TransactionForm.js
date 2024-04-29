@@ -5,6 +5,7 @@ function TransactionForm({ addTransaction }) {
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState('');
+  const [date, setDate] = useState(''); // Add state for date
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,15 +13,17 @@ function TransactionForm({ addTransaction }) {
       description,
       amount,
       category,
+      date, // Include date in the new transaction object
     };
     addTransaction(newTransaction);
     setDescription('');
     setAmount('');
     setCategory('');
+    setDate('');
   };
 
   return (
-    <div>
+    <div className="transaction-form">
       <h2>Add New Transaction</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -40,6 +43,12 @@ function TransactionForm({ addTransaction }) {
           placeholder="Category"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
+        />
+        {/* Date input field */}
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
         />
         <button type="submit">Add Transaction</button>
       </form>

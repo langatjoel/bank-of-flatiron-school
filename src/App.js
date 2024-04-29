@@ -6,14 +6,16 @@ import TransactionTable from './TransactionTable';
 import TransactionForm from './TransactionForm';
 import SearchBar from './SearchBar';
 
+
 function App() {
   // Define state to hold transactions
   const [transactions, setTransactions] = useState([
-    { id: 1, description: 'Coffee', amount: 5.99, category: 'Food' },
-    { id: 2, description: 'Movie tickets', amount: 20.5, category: 'Entertainment' },
-    { id: 3, description: 'Gas', amount: 30.25, category: 'Travel' },
-    { id: 4, description: 'Books', amount: 15.75, category: 'Shopping' },
+    { id: 1, description: 'Coffee', amount: 5.99, category: 'Food', date: '2024-04-27' },
+    { id: 2, description: 'Movie tickets', amount: 20.5, category: 'Entertainment', date: '2024-04-27' },
+    { id: 3, description: 'Gas', amount: 30.25, category: 'Travel', date: '2024-04-27' },
+    { id: 4, description: 'Books', amount: 15.75, category: 'Shopping', date: '2024-04-27' },
   ]);
+  
 
   // Define state for search term
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,10 +28,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-     
+        
         <p>
           Welcome to the Bank of Flatiron!
         </p>
+        
+
         {/* Render TransactionForm component */}
         <TransactionForm addTransaction={addTransaction} />
         {/* Render SearchBar component */}

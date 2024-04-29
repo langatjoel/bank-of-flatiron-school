@@ -8,7 +8,7 @@ function TransactionTable({ transactions, searchTerm }) {
   );
 
   return (
-    <div>
+    <div className="transaction-table">
       <h2>Transaction Table</h2>
       <table>
         <thead>
@@ -16,6 +16,7 @@ function TransactionTable({ transactions, searchTerm }) {
             <th>Description</th>
             <th>Amount</th>
             <th>Category</th>
+            <th>Date</th> {/* Add Date column */}
           </tr>
         </thead>
         <tbody>
@@ -25,6 +26,7 @@ function TransactionTable({ transactions, searchTerm }) {
               <td>{transaction.description}</td>
               <td>{transaction.amount}</td>
               <td>{transaction.category}</td>
+              <td>{transaction.date}</td> {/* Display date */}
             </tr>
           ))}
         </tbody>
