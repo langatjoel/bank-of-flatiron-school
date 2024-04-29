@@ -1,6 +1,6 @@
 // App.js
 import React, { useState } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import TransactionTable from './TransactionTable';
 import TransactionForm from './TransactionForm';
@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+     
         <p>
           Welcome to the Bank of Flatiron!
         </p>
